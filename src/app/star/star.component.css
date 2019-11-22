@@ -1,0 +1,36 @@
+.container{
+    position: relative;
+}
+.star-box .width span{
+    color: gold;
+    opacity: 0.2;
+    cursor: pointer;
+    
+}
+.star-box .width span:hover{
+    opacity:1;
+}
+.width span:hover ~ span{
+    opacity: 1 !important;
+}
+
+.width{
+    width: 90px;
+}
+.starbox:hover{
+    display: none;
+    opacity:0;
+}
+.starbox{
+    width: 90px;
+    overflow: hidden !important;
+    color: gold;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+}
+
+
+
+

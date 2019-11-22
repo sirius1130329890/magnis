@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-md-3 col-sm-12">
+        <form action="form">
+          <div class="form-group">
+            <label for="comments-text-area">Comments :</label>
+            <textarea class="form-control" name="CommentInput" id="comments-text-area" cols="25" rows="8" placeholder="Write your Comment here..." (keyup.enter)='addComment()' #textAreaRef></textarea>            
+          </div> 
+        </form> 
+        <button class="btn btn-primary mb-3" (click)='addComment()'>Add Comment</button>       
+      </div>
+    </div>
+    <div class="comment-show" *ngIf="comments != null">
+      <div class="row comment" *ngFor="let c of comments">
+        <div class="col-lg-4 col-md-3 col-sm-12">
+          <div class="rating-bar d-flex">
+            <app-star></app-star>
+            <div class="like-box d-flex ml-auto">
+              <span (click)= "likeClicked(c)"><i class="fas fa-heart like"></i></span>
+              <span><p class="like-number ml-1">{{ c.like }}</p></span>
+              <span (click)= "dislikeClicked(c)"><i class="far fa-heart dislike ml-3"></i></span>           
+              <span><p class="dislike-number ml-1">{{ c.dislike }}</p></span>
+            </div>          
+          </div>
+          <div class="text-box d-flex">
+            <p>{{ c.comment }}</p>
+          </div>
+          <div class="col-md-12 text-red">
+              <hr>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
